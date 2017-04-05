@@ -1,12 +1,15 @@
-public static void main (String[] args) {
-    int f = 0;
-    int g = 1;
+public static int f(int n){
+    if (n <= 1)
+        return n;
+    else 
+        return f(n-1) + f(n-2);
+}
 
-    for (int i = 1; i <= 10; i++) {
-        System.out.print(f + " ");
-        f = f + g;
-        g = f - g;
-    } 
-
-    System.out.println();
+static void printReversedFib(int x){
+    if(x <= 1)
+        System.out.println(f(x));
+    else{
+        System.out.println(f(x));
+        printReverseFib(x-1);
+    }
 }
