@@ -1,17 +1,15 @@
-public static void main(String [] args) {
-    int a; 
-    int b = 0;
-    int c = 1;
-    int sum = 0;
+public static int f(int n){
+    if (n <= 1)
+        return n;
+    else 
+        return f(n-1) + f(n-2);
+}
 
-    for (int i = 0; i < 10; i++) { // Finds fibonacci sequence
-        a = b;
-        b = c;
-        c = a + b;
-
-        if ( c % 2 == 0) { // Check if it's even
-            sum += c;
-        }
+static void printReversedFib(int x){
+    if(x <= 1)
+        System.out.println(f(x));
+    else{
+        System.out.println(f(x));
+        printReverseFib(x-1);
     }
-    System.out.println(sum);
 }
